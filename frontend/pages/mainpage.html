@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommender</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../static/styles.css">
+</head>
+<body>
+    <main class="hero">
+        <div class="brand">
+            <span class="brand-icon">&#9654;</span>
+            <span class="brand-name">FLICKPICK</span>
+        </div>
+
+        <h1>Find Your Next Favorite Movie</h1>
+        <p class="subtitle">Enter a movie you love and we'll find ones just like it</p>
+
+        <form action="/search" method="GET" class="search-form">
+            <input type="search" id="query" name="q" placeholder="e.g. Inception, The Dark Knight...">
+            <button type="submit">Recommend</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>Made by Kamsy &mdash; Movie Recommender &copy; 2026</p>
+    </footer>
+</body>
+</html>

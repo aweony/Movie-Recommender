@@ -1,0 +1,126 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #141414;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hero Section */
+.hero {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 24px;
+    text-align: center;
+}
+
+/* Brand */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 48px;
+}
+
+.brand-icon {
+    font-size: 28px;
+    color: #E50914;
+}
+
+.brand-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    letter-spacing: 4px;
+    color: #E50914;
+}
+
+/* Heading */
+h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 6vw, 72px);
+    letter-spacing: 2px;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    color: #ffffff;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #a3a3a3;
+    margin-bottom: 40px;
+    max-width: 420px;
+}
+
+/* Search Form */
+.search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    max-width: 520px;
+}
+
+.search-form input[type="search"] {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border: 2px solid #3a3a3a;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.search-form input[type="search"]:focus {
+    border-color: #E50914;
+}
+
+.search-form input[type="search"]::placeholder {
+    color: #666666;
+}
+
+.search-form button {
+    width: 100%;
+    padding: 16px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: #E50914;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.search-form button:hover {
+    background-color: #b2060f;
+}
+
+.search-form button:active {
+    transform: scale(0.98);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 24px;
+    font-size: 13px;
+    color: #555555;
+    border-top: 1px solid #222222;
+}
