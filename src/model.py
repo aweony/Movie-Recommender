@@ -1,8 +1,9 @@
+import os
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-DATA = r"data\TMDB_movie_dataset_v11.csv"
+DATA = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "TMDB_movie_dataset_v11.csv")
 TMDB_IMG_BASE = "https://image.tmdb.org/t/p/w500"
 
 # Filter to released movies with enough votes and a non-empty overview
