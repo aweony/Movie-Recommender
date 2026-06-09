@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../static/styles.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <main class="hero">
@@ -18,6 +18,10 @@
 
         <h1>Find Your Next Favorite Movie</h1>
         <p class="subtitle">Enter a movie you love and we'll find ones just like it</p>
+
+        {% if error %}
+        <p class="search-error">{{ error }}</p>
+        {% endif %}
 
         <form action="/search" method="GET" class="search-form">
             <input type="search" id="query" name="q" placeholder="e.g. Inception, The Dark Knight...">

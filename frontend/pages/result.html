@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../static/styles.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <header class="results-header">
@@ -20,129 +20,27 @@
 
     <main class="results-main">
         <h1 class="results-title">Movies you may like</h1>
-        <p class="results-subtitle">Based on: <strong>User movie</strong></p>
+        <p class="results-subtitle">Based on: <strong>{{ query }}</strong></p>
 
         <ol class="movie-list">
+            {% for movie in movies %}
             <li class="movie-card">
-                <img class="movie-poster" src="link of the poster" alt="Movie poster">
+                {% if movie.poster_url %}
+                <img class="movie-poster" src="{{ movie.poster_url }}" alt="{{ movie.title }} poster">
+                {% else %}
+                <div class="movie-poster movie-poster--placeholder"></div>
+                {% endif %}
                 <div class="movie-info">
-                    <h2 class="movie-title">Movie Title</h2>
+                    <h2 class="movie-title">{{ movie.title }} <span class="movie-year">({{ movie.release_year }})</span></h2>
                     <div class="movie-meta">
-                        <span class="movie-genre">Genre</span>
-                        <span class="movie-rating">&#9733; Rating</span>
+                        <span class="movie-genre">{{ movie.genres }}</span>
+                        <span class="movie-rating">&#9733; {{ movie.rating }}</span>
                     </div>
-                    <p class="movie-description">Description goes here.</p>
-                    <p class="movie-reason"><span class="reason-label">Why you'll like it:</span> Reason for the choice.</p>
+                    <p class="movie-description">{{ movie.overview }}</p>
+                    <p class="movie-reason"><span class="reason-label">Why you'll like it:</span> {{ movie.reason }}</p>
                 </div>
             </li>
-            <li class="movie-card">
-                <img class="movie-poster" src="link of the poster" alt="Movie poster">
-                <div class="movie-info">
-                    <h2 class="movie-title">Movie Title</h2>
-                    <div class="movie-meta">
-                        <span class="movie-genre">Genre</span>
-                        <span class="movie-rating">&#9733; Rating</span>
-                    </div>
-                    <p class="movie-description">Description goes here.</p>
-                    <p class="movie-reason"><span class="reason-label">Why you'll like it:</span> Reason for the choice.</p>
-                </div>
-            </li>
-            <li class="movie-card">
-                <img class="movie-poster" src="link of the poster" alt="Movie poster">
-                <div class="movie-info">
-                    <h2 class="movie-title">Movie Title</h2>
-                    <div class="movie-meta">
-                        <span class="movie-genre">Genre</span>
-                        <span class="movie-rating">&#9733; Rating</span>
-                    </div>
-                    <p class="movie-description">Description goes here.</p>
-                    <p class="movie-reason"><span class="reason-label">Why you'll like it:</span> Reason for the choice.</p>
-                </div>
-            </li>
-            <li class="movie-card">
-                <img class="movie-poster" src="link of the poster" alt="Movie poster">
-                <div class="movie-info">
-                    <h2 class="movie-title">Movie Title</h2>
-                    <div class="movie-meta">
-                        <span class="movie-genre">Genre</span>
-                        <span class="movie-rating">&#9733; Rating</span>
-                    </div>
-                    <p class="movie-description">Description goes here.</p>
-                    <p class="movie-reason"><span class="reason-label">Why you'll like it:</span> Reason for the choice.</p>
-                </div>
-            </li>
-            <li class="movie-card">
-                <img class="movie-poster" src="link of the poster" alt="Movie poster">
-                <div class="movie-info">
-                    <h2 class="movie-title">Movie Title</h2>
-                    <div class="movie-meta">
-                        <span class="movie-genre">Genre</span>
-                        <span class="movie-rating">&#9733; Rating</span>
-                    </div>
-                    <p class="movie-description">Description goes here.</p>
-                    <p class="movie-reason"><span class="reason-label">Why you'll like it:</span> Reason for the choice.</p>
-                </div>
-            </li>
-            <li class="movie-card">
-                <img class="movie-poster" src="link of the poster" alt="Movie poster">
-                <div class="movie-info">
-                    <h2 class="movie-title">Movie Title</h2>
-                    <div class="movie-meta">
-                        <span class="movie-genre">Genre</span>
-                        <span class="movie-rating">&#9733; Rating</span>
-                    </div>
-                    <p class="movie-description">Description goes here.</p>
-                    <p class="movie-reason"><span class="reason-label">Why you'll like it:</span> Reason for the choice.</p>
-                </div>
-            </li>
-            <li class="movie-card">
-                <img class="movie-poster" src="link of the poster" alt="Movie poster">
-                <div class="movie-info">
-                    <h2 class="movie-title">Movie Title</h2>
-                    <div class="movie-meta">
-                        <span class="movie-genre">Genre</span>
-                        <span class="movie-rating">&#9733; Rating</span>
-                    </div>
-                    <p class="movie-description">Description goes here.</p>
-                    <p class="movie-reason"><span class="reason-label">Why you'll like it:</span> Reason for the choice.</p>
-                </div>
-            </li>
-            <li class="movie-card">
-                <img class="movie-poster" src="link of the poster" alt="Movie poster">
-                <div class="movie-info">
-                    <h2 class="movie-title">Movie Title</h2>
-                    <div class="movie-meta">
-                        <span class="movie-genre">Genre</span>
-                        <span class="movie-rating">&#9733; Rating</span>
-                    </div>
-                    <p class="movie-description">Description goes here.</p>
-                    <p class="movie-reason"><span class="reason-label">Why you'll like it:</span> Reason for the choice.</p>
-                </div>
-            </li>
-            <li class="movie-card">
-                <img class="movie-poster" src="link of the poster" alt="Movie poster">
-                <div class="movie-info">
-                    <h2 class="movie-title">Movie Title</h2>
-                    <div class="movie-meta">
-                        <span class="movie-genre">Genre</span>
-                        <span class="movie-rating">&#9733; Rating</span>
-                    </div>
-                    <p class="movie-description">Description goes here.</p>
-                    <p class="movie-reason"><span class="reason-label">Why you'll like it:</span> Reason for the choice.</p>
-                </div>
-            </li>
-            <li class="movie-card">
-                <img class="movie-poster" src="link of the poster" alt="Movie poster">
-                <div class="movie-info">
-                    <h2 class="movie-title">Movie Title</h2>
-                    <div class="movie-meta">
-                        <span class="movie-genre">Genre</span>
-                        <span class="movie-rating">&#9733; Rating</span>
-                    </div>
-                    <p class="movie-description">Description goes here.</p>
-                    <p class="movie-reason"><span class="reason-label">Why you'll like it:</span> Reason for the choice.</p>
-                </div>
-            </li>
+            {% endfor %}
         </ol>
     </main>
 
