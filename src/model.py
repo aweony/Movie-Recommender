@@ -79,14 +79,3 @@ def recommend(movie_title: str, n: int = 10) -> list | str:
         })
     return results
 
-
-if __name__ == "__main__":
-    results = recommend("Avatar")
-    if isinstance(results, str):
-        print(results)
-    else:
-        for r in results:
-            print(f"{r['title']} ({r['release_year']}) — {r['rating']}★  [sim: {r['score']}]")
-            print(f"  Genres : {r['genres']}")
-            print(f"  Reason : {r['reason']}")
-            print()
